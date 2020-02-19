@@ -1,1 +1,626 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cardo'), local('Cardo-Regular'), url(https://fonts.gstatic.com/s/cardo/v11/wlp_gwjKBV1pqhv43IQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v11/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmb2Rm.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/*Universal Styles*/
+.container.home-page {
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  min-height: auto;
+  max-width: 100em;
+}
+h1 {
+  font-family: 'Robot Slab', serif;
+}
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+button {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+p,
+input,
+textarea {
+  font-family: 'Cardo', serif;
+  line-height: 1.4em;
+  color: darkgrey;
+}
+label {
+  color: white;
+  letter-spacing: 2px;
+}
+button {
+  background: black;
+  color: white;
+  border-radius: 5px;
+  padding: 0 1.5rem;
+  border: none;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+button:hover {
+  color: black;
+  background: white;
+}
+/*Navigation*/
+nav {
+  margin-top: -3px;
+  padding: 0 5%;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: space-between;
+  background: black;
+  position: fixed;
+  z-index: 9999;
+  min-height: 3em;
+  max-width: auto;
+}
+nav .nav-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5%;
+  width: 100%;
+  min-height: 100%;
+  max-width: 100em;
+}
+nav .nav-container h4 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+nav .nav-container .nav-links {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+nav .nav-container .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+nav .nav-container .nav-links a:hover {
+  font-weight: bold;
+  padding: 4px 0 2px 0;
+  margin-bottom: 2px;
+  border-top: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+}
+nav .nav-container #miniNav {
+  display: none;
+  position: absolute;
+}
+nav .nav-container #miniNav .burger {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px;
+}
+@media (max-width:800px) {
+  nav .nav-container #miniNav {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  nav .nav-container .nav-links {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    padding: 0 15% 0 5%;
+    background: lightgray;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in;
+  }
+  nav .nav-container .nav-links a {
+    font-size: 0.8em;
+    color: black;
+  }
+  nav .nav-container .nav-links a:hover {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  nav .nav-container .nav-active {
+    transform: translateY(0%);
+  }
+}
+/*Top Section (Header: Profile & Intro)*/
+.top-section {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 35%;
+  width: 100%;
+  min-height: 35em;
+  max-width: auto;
+}
+.top-section header {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90%;
+  width: 45%;
+}
+.top-section header .image-crop {
+  height: 15em;
+  width: 15em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.top-section header .image-crop img {
+  height: 100%;
+  width: auto;
+  display: inline;
+  margin: 0 auto;
+  margin-left: -20%;
+}
+.top-section header .profile-left {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 25%;
+  width: 100%;
+}
+.top-section header .profile-left h2 {
+  letter-spacing: 2px;
+}
+.top-section .profile-right {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70%;
+  width: 45%;
+}
+.top-section .profile-right h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.top-section .profile-right .intro {
+  height: 50%;
+  width: 100%;
+  line-height: 2rem;
+}
+.top-section .profile-right .intro .accent-text {
+  font-weight: bold;
+  color: black;
+}
+@media (max-width:800px) {
+  .top-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    min-height: 50em;
+    max-width: auto;
+  }
+  .top-section header {
+    justify-content: center;
+    height: 40%;
+    width: 100%;
+  }
+  .top-section .profile-right {
+    height: 40%;
+    width: 80%;
+    border-top: 1px solid black;
+  }
+}
+@media (max-width:500px) {
+  .top-section {
+    height: 95%;
+    min-height: 80em;
+    max-width: auto;
+  }
+}
+/*Middle Section (Experience)*/
+.experience {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  height: 35%;
+  width: 100%;
+  border-top: 1px solid black;
+  padding-top: 2%;
+  min-height: 25em;
+  max-width: auto;
+}
+.experience div {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+}
+.experience div h4 {
+  font-size: 1.2rem;
+}
+.experience div p:nth-child(2) {
+  height: 50%;
+  width: 100%;
+}
+.experience div > div {
+  height: 30%;
+  width: 90%;
+  border: 1px solid black;
+}
+@media (max-width:800px) {
+  .experience {
+    flex-wrap: wrap-reverse;
+    height: 60%;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 2%;
+    min-height: 40em;
+    max-width: auto;
+  }
+  .experience div {
+    justify-content: space-evenly;
+    height: 40%;
+    width: 45%;
+  }
+  .experience div > div {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width:500px) {
+  .experience {
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: 70em;
+    max-width: auto;
+  }
+  .experience div {
+    height: 25%;
+    width: 80%;
+  }
+  .experience div > div {
+    height: 35%;
+  }
+}
+/*Bottom Section (Skills, Contact, Copyright)*/
+.bottom-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 35%;
+  width: 100%;
+  min-height: 25em;
+  max-width: auto;
+}
+.bottom-section .bottom-section-upper {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+.bottom-section .bottom-section-upper .skills {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 60%;
+  width: 30%;
+  font-weight: bold;
+}
+.bottom-section .bottom-section-upper .skills h3 {
+  font-size: 1.2rem;
+  color: black;
+}
+.bottom-section .bottom-section-upper .skills .skills-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 70%;
+  width: 100%;
+}
+.bottom-section .bottom-section-upper .skills .skills-list .skill-level {
+  height: 10%;
+  width: 95%;
+  padding: 2px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.bottom-section .bottom-section-upper .skills .skills-list .skill-level .skill-fill {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+}
+.bottom-section .bottom-section-upper .contact {
+  height: 90%;
+  width: 65%;
+}
+.bottom-section .bottom-section-upper .contact form {
+  height: 90%;
+  width: 100%;
+  margin-top: 5%;
+  background-image: url("../images/leaves.jpg");
+}
+.bottom-section .bottom-section-upper .contact form .opacity {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.bottom-section .bottom-section-upper .contact form .opacity .contact-left {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+  width: 40%;
+}
+.bottom-section .bottom-section-upper .contact form .opacity .contact-left div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  width: 90%;
+}
+.bottom-section .bottom-section-upper .contact form .opacity .contact-left div input {
+  height: 25%;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.bottom-section .bottom-section-upper .contact form .opacity .contact-right {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+  width: 60%;
+  border-left: 1px solid #666666;
+}
+.bottom-section .bottom-section-upper .contact form .opacity .contact-right textarea {
+  height: 60%;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.bottom-section .copyright {
+  height: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+@media (max-width:800px) {
+  .bottom-section {
+    height: 70%;
+    width: 100%;
+    min-height: 50em;
+    max-width: auto;
+  }
+  .bottom-section .bottom-section-upper {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+  }
+  .bottom-section .bottom-section-upper .skills {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 30%;
+    width: 90%;
+    font-weight: bold;
+  }
+  .bottom-section .bottom-section-upper .contact {
+    height: 50%;
+    width: 100%;
+  }
+}
+@media (max-width:500px) {
+  .bottom-section {
+    min-height: 50em;
+    max-width: auto;
+  }
+  .bottom-section #inputs {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+  }
+  .bottom-section #inputs input {
+    height: 30%;
+    width: 80%;
+  }
+}
+/*Variables*/
+/*Mix-ins*/
